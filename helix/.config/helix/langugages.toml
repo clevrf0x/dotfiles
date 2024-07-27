@@ -1,0 +1,126 @@
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+wakatime = { command = "wakatime-lsp" }
+
+[language-server.sqls]
+command = "sqls"
+args = ["up", "--method", "stdio"]
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config.settings]
+args = ["--ignore", "E501"]
+
+[language-server.tailwindcss-ls]
+config = { userLanguages = { rust = "html", "*.rs" = "html" } }
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.yaml-language-server.config.yaml]
+format = { enable = true }
+validation = true
+
+[language-server.yaml-language-server.config.yaml.schemas]
+"https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
+"https://raw.githubusercontent.com/ansible-community/schemas/main/f/ansible-tasks.json" = "roles/{tasks,handlers}/*.{yml,yaml}"
+
+[[language]]
+name = "go"
+auto-format = true
+# formatter = { command = "goimports" }
+language-servers = ["gopls", "wakatime"]
+
+[[language]]
+name = "sql"
+language-servers = ["sqls", "wakatime"]
+
+[[language]]
+name = "python"
+language-servers = ["pyright", "ruff", "wakatime"]
+
+[language.formatter]
+command = "black"
+args = ["--line-length", "88", "--quiet", "-"]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "tailwindcss-ls", "wakatime"]
+
+[[language]]
+name = "css"
+language-servers = ["vscode-css-language-server", "tailwindcss-ls", "wakatime"]
+
+[[language]]
+name = "jsx"
+auto-format = true
+language-servers = [
+    { name = "typescript-language-server", except-features = ["format"] },
+    "biome",
+    "tailwindcss-ls",
+    "wakatime"
+]
+
+[[language]]
+name = "tsx"
+auto-format = true
+language-servers = [
+    { name = "typescript-language-server", except-features = ["format"] },
+    "biome",
+    "tailwindcss-ls",
+    "wakatime"
+]
+
+[[language]]
+name = "svelte"
+language-servers = ["svelteserver", "tailwindcss-ls", "wakatime"]
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer", "tailwindcss-ls", "wakatime"]
+
+[[language]]
+name = "javascript"
+auto-format = true
+language-servers = [
+    { name = "typescript-language-server", except-features = ["format"] },
+    "biome",
+    "wakatime"
+]
+
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = [
+    { name = "typescript-language-server", except-features = ["format"] },
+    "biome",
+    "wakatime"
+]
+
+[[language]]
+name = "json"
+language-servers = [
+    { name = "vscode-json-language-server", except-features = ["format"] },
+    "biome",
+    "wakatime"
+]
+
+[[language]]
+name = "yaml"
+language-servers = ["yaml-language-server", "wakatime"]
+file-types = ["yml", "yaml"]
+
+[[language]]
+name = "dockerfile"
+language-servers = ["docker-langserver", "wakatime"]
+
+[[language]]
+name = "github-actions-workflow"
+language-servers = ["yaml-language-server", "wakatime"]
+file-types = ["yml", "yaml"]
+scope = "source.yaml"
+roots = [".github/workflows"]

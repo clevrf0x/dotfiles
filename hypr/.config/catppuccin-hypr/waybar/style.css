@@ -1,0 +1,278 @@
+/* 
+ * Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
+*/
+
+/** ********** Import Colors ********** **/
+@import "./colors.css";
+
+/** ********** Fonts ********** **/
+* {
+    font-family: "JetBrains Mono", "Iosevka Nerd Font", archcraft, sans-serif;
+    font-size: 12px;
+}
+
+/** ********** Waybar Window ********** **/
+window#waybar {
+    background-color: @background;
+	color: @background;
+    border-bottom: 0px solid @background-alt1;
+	border-radius: 0px 0px 20px 20px;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.5;
+}
+
+/** ********** Backlight ********** **/
+#backlight {
+	background-color: @green;
+}
+
+/** ********** Battery ********** **/
+#battery {
+	background-color: @blue;
+}
+
+#battery.charging {
+}
+
+#battery.plugged {
+}
+
+@keyframes blink {
+    to {
+        color: @black;
+    }
+}
+
+#battery.critical:not(.charging) {
+	background-color: @red;
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/** ********** Clock ********** **/
+#clock {
+	background-color: @yellow;
+}
+
+/** ********** CPU ********** **/
+#cpu {
+	background-color: @cyan;
+}
+
+/** ********** Memory ********** **/
+#memory {
+	background-color: @magenta;
+}
+
+/** ********** Disk ********** **/
+#disk {
+	background-color: @blue;
+}
+
+/** ***** Idle Inhibitor ***** **/
+#idle_inhibitor {
+	background-color: @green;
+}
+#idle_inhibitor.deactivated {
+	background-color: @red;
+}
+
+/** ********** Tray ********** **/
+#tray {
+	background-color: @background-alt2;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+#tray > .active {
+}
+
+/** ********** MPD ********** **/
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#mpd {
+	background-color: @background-alt1;
+	color: @foreground;
+}
+
+#mpd.disconnected {
+	background-color: @red;
+	color: @background;
+}
+
+#mpd.stopped {
+	background-color: @magenta;
+	color: @background;
+}
+
+#mpd.playing {
+    background: linear-gradient(90deg, @magenta 25%, @red 50%, @yellow 75%, @cyan 100%); 
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+    color: @background;
+}
+
+#mpd.paused {
+}
+
+/** ********** Spotify ********** **/
+#custom-spotify {
+	background-color: @background-alt1;
+	color: @foreground;
+}
+
+#custom-spotify.paused {
+	background-color: @background-alt1;
+	color: @foreground;
+}
+
+#custom-spotify.playing {
+    background: linear-gradient(90deg, @magenta 25%, @red 50%, @yellow 75%, @cyan 100%); 
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+    color: @background;
+}
+
+#custom-spotify.offline {
+	background-color: @red;
+	color: @background;
+}
+
+/** ********** Pulseaudio ********** **/
+#pulseaudio {
+	background-color: @yellow;
+}
+
+#pulseaudio.bluetooth {
+	background-color: @yellow;
+}
+#pulseaudio.muted {
+	background-color: @red;
+	color: @background;
+}
+
+/** ********** Network ********** **/
+#network {
+	background-color: @magenta;
+}
+
+#network.disconnected,#network.disabled {
+	background-color: @background-alt1;
+	color: @foreground;
+}
+#network.linked {
+}
+#network.ethernet {
+}
+#network.wifi {
+}
+
+/** ********** Bluetooth ********** **/
+#bluetooth {
+	background-color: @cyan;
+}
+#bluetooth.disabled{
+	background-color: @background-alt1;
+	color: @foreground;
+}
+#bluetooth.off{
+	background-color: @background-alt1;
+	color: @foreground;
+}
+#bluetooth.on{
+}
+#bluetooth.connected{
+}
+#bluetooth.discoverable{
+}
+#bluetooth.discovering{
+}
+#bluetooth.pairable{
+}
+
+/** ********** WLR Desktop ********** **/
+#workspaces {
+	background-color: @background;
+	border-radius: 4px;
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+#workspaces button{
+	color: @foreground;
+}
+#workspaces button.active{
+	color: @selected;
+}
+#workspaces button.urgent{
+	color: @red;
+}
+#workspaces button.hidden{
+	color: @yellow;
+}
+
+/** ********** Custom ********** **/
+#custom-themes, #custom-menu, #custom-power {
+	border-radius: 12px;
+	margin: 6px 0px;
+	padding: 2px 10px;
+}
+
+#custom-themes {
+	background-color: @selected;
+	padding: 2px 8px;
+}
+
+#custom-menu {
+	background-color: @selected;
+	margin-left: 6px;
+	padding: 2px 6px;
+	font-size: 16px;
+}
+
+#custom-power {
+	background-color: @red;
+	margin-right: 6px;
+	padding: 2px 8px;
+	font-size: 16px;
+}
+
+/** Common style **/
+#backlight, 
+#battery,
+#clock,
+#cpu,
+#disk,
+#mode,
+#memory,
+#mpd,
+#custom-spotify,
+#idle_inhibitor,
+#tray,
+#pulseaudio,
+#network,
+#bluetooth {
+	border-radius: 12px;
+	margin: 6px 0px;
+	padding: 2px 10px;
+}
