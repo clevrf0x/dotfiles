@@ -58,7 +58,7 @@ apply_dotfiles() {
         fi
     done
 
-    print_tagged "COMPLETE" "Dotfiles applied successfully. Backup created at ${backup_dir}" "${GREEN}"
+    print_tagged "COMPLETE" "Dotfiles applied successfully." "${GREEN}"
 }
 
 # Main script execution
