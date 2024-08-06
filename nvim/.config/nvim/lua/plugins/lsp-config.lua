@@ -9,7 +9,6 @@ local lsp_servers = {
   "gopls",
   "html",
   "htmx",
-  "biome",
   "jinja_lsp",
   "marksman",
   "pyright",
@@ -99,10 +98,16 @@ end
 -- Function to format file before saving
 local function format_files_before_save()
   vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-      vim.lsp.buf.format {
-        async = false,
-      }
+    callback = function(event)
+      -- Only format if it's not a JavaScript/TypeScript file
+      if
+          not vim.tbl_contains(
+            { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+            vim.bo[event.buf].filetype
+          )
+      then
+        vim.lsp.buf.format { async = false }
+      end
     end,
   })
 end

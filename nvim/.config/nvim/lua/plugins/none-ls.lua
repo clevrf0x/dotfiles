@@ -69,7 +69,7 @@ return {
         null_ls.builtins.diagnostics.staticcheck,
         -- null_ls.builtins.diagnostics.stylelint,
         null_ls.builtins.diagnostics.yamllint,
-        require "none-ls.diagnostics.eslint_d",
+        -- require "none-ls.diagnostics.eslint_d",
       },
     }
   end,
