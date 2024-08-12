@@ -57,7 +57,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # Custom config
 ## Environment variables
 EDITOR=nvim
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 ## Alias
 alias c='clear'
