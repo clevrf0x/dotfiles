@@ -80,20 +80,20 @@ eval "$(fzf --zsh)"
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/catppuccin.json)"
 
 # Start Zellij Sessions
-ZJ_SESSIONS=$(zellij list-sessions --no-formatting | sed 's/\x1B\[[0-9;]*[JKmsu]//g')
-NO_SESSIONS=$(echo "${ZJ_SESSIONS}" | wc -l)
-
-if [ "${NO_SESSIONS}" -ge 2 ]; then
-    SESSION=$(echo "${ZJ_SESSIONS}" | cut -d' ' -f1 | sk)
-    if [ -n "${SESSION}" ]; then
-        zellij attach "${SESSION}"
-    else
-        zellij attach -c
-    fi
-else
-    zellij attach -c
-fi
-
+# ZJ_SESSIONS=$(zellij list-sessions --no-formatting | sed 's/\x1B\[[0-9;]*[JKmsu]//g')
+# NO_SESSIONS=$(echo "${ZJ_SESSIONS}" | wc -l)
+#
+# if [ "${NO_SESSIONS}" -ge 2 ]; then
+#     SESSION=$(echo "${ZJ_SESSIONS}" | cut -d' ' -f1 | sk)
+#     if [ -n "${SESSION}" ]; then
+#         zellij attach "${SESSION}"
+#     else
+#         zellij attach -c
+#     fi
+# else
+#     zellij attach -c
+# fi
+#
 ## Auto run scripts
 # Colorscripts
 pfetch
