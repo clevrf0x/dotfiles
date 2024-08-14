@@ -44,7 +44,7 @@ install_stow() {
 # Apply dotfiles using stow
 apply_dotfiles() {
     local dotfiles_dir="$HOME/.dotfiles" 
-    local packages=("base" "config" "fonts" "gtk-theme" "helix" "hypr" "kitty" "nvim" "wallpapers")
+    local packages=("base" "config" "fonts" "gtk-theme" "helix" "hypr" "kitty" "nvim" "wallpapers" "zellij")
 
     print_tagged "APPLY" "Applying dotfiles..." "${CYAN}"
     cd "$dotfiles_dir" || exit 1
