@@ -63,6 +63,7 @@ export PATH="$HOME/go/bin:$PATH"
 alias c='clear'
 alias cf='clear && pfetch'
 alias hx='helix'
+alias tmux='tmux -u'
 
 alias ls='eza'
 alias l='eza -l'
