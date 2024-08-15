@@ -234,3 +234,10 @@ copy_command "wl-copy"
 copy_on_select false
 
 // scrollback_editor "/usr/bin/vim"
+
+ui {
+    pane_frames {
+        rounded_corners false
+        hide_session_name true
+    }
+}
