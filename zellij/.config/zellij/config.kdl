@@ -210,25 +210,9 @@ plugins {
 pane_frames true
 auto_layout true
 session_serialization true
-
-themes {
-  catppuccin {
-    fg "#e1e9ee"
-    bg "#12121b"
-    black "#12121b"
-    red "#9BD2A4"
-    green "#ABE9B3"
-    yellow "#DCB6F1"
-    blue "#8FD5F3"
-    magenta "#ABD9F2"
-    cyan "#CACCFD"
-    white "#e1e9ee"
-    orange "#9BD2A4"     
-  }
-}
-
-theme "tokyo-night"
-default_layout "compact"
+theme "gruvbox-dark"
+default_layout "default"
+//default_layout "compact"
 mouse_mode true
 copy_command "wl-copy"
 copy_on_select false
