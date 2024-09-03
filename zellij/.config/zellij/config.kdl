@@ -211,11 +211,10 @@ pane_frames true
 auto_layout true
 session_serialization true
 theme "gruvbox-dark"
-default_layout "default"
-//default_layout "compact"
+default_layout "compact"
 mouse_mode true
 copy_command "wl-copy"
-copy_on_select false
+copy_on_select true
 
 // scrollback_editor "/usr/bin/vim"
 
