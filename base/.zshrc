@@ -58,6 +58,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 ## Environment variables
 EDITOR=nvim
 export PATH="$HOME/sdk/flutter/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
+export PATH="$HOME/Android/Sdk/cmdline-tools/latest/bin:$PATH"
+export CHROME_EXECUTABLE=google-chrome-stable
 
 ## Alias
 alias c='clear'

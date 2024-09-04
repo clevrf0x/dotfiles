@@ -26,7 +26,7 @@ return {
         "pylint",
         "staticcheck",
         "stylelint",
-        "yamllint",
+        -- "yamllint",
         "djhtml",
         "gofmt",
         "goimports",
@@ -68,7 +68,7 @@ return {
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.staticcheck,
         -- null_ls.builtins.diagnostics.stylelint,
-        null_ls.builtins.diagnostics.yamllint,
+        -- null_ls.builtins.diagnostics.yamllint,
         -- require "none-ls.diagnostics.eslint_d",
       },
     }
