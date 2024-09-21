@@ -1,11 +1,7 @@
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,run,filebrowser";
+    modi:                       "clipboard";
     show-icons:                 true;
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-	drun-display-format:        "{name}";
 }
 
 /*****----- Global Properties -----*****/
@@ -14,16 +10,14 @@ configuration {
 
 /*****----- Main Window -----*****/
 window {
-    /* properties for window widget */
     transparency:                "real";
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       800px;
+    width:                       900px;
     x-offset:                    0px;
     y-offset:                    0px;
 
-    /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
@@ -41,7 +35,7 @@ mainbox {
     margin:                      0px;
     padding:                     30px;
     background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
+    children:                    [ "inputbar", "listview", "message" ];
 }
 
 /*****----- Inputbar -----*****/
@@ -61,29 +55,31 @@ prompt {
     background-color:            inherit;
     text-color:                  inherit;
 }
+
 textbox-prompt-colon {
     enabled:                     true;
     padding:                     0px;
     expand:                      false;
-    str:                         "";
+    str:                         "";
     background-color:            inherit;
     text-color:                  inherit;
 }
+
 entry {
     enabled:                     true;
     padding:                     0px;
     background-color:            inherit;
     text-color:                  inherit;
     cursor:                      text;
-    placeholder:                 "Search...";
+    placeholder:                 "Search clipboard...";
     placeholder-color:           inherit;
 }
 
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     2;
-    lines:                       7;
+    columns:                     1;
+    lines:                       10;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -91,12 +87,13 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
+
     spacing:                     5px;
     background-color:            transparent;
     text-color:                  @foreground;
     cursor:                      "default";
 }
+
 scrollbar {
     handle-width:                5px ;
     handle-color:                @selected;
@@ -115,33 +112,39 @@ element {
     text-color:                  @foreground;
     cursor:                      pointer;
 }
+
 element normal.normal,
 element alternate.normal {
     background-color:            var(background);
     text-color:                  var(foreground);
 }
+
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
     background-color:            var(urgent);
     text-color:                  var(background);
 }
+
 element normal.active,
 element alternate.active,
 element selected.urgent {
     background-color:            var(active);
     text-color:                  var(background);
 }
+
 element selected.normal {
     background-color:            var(selected);
     text-color:                  var(background);
 }
+
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
     size:                        24px;
     cursor:                      inherit;
 }
+
 element-text {
     background-color:            transparent;
     text-color:                  inherit;
@@ -149,27 +152,6 @@ element-text {
     cursor:                      inherit;
     vertical-align:              0.5;
     horizontal-align:            0.0;
-}
-
-/*****----- Mode Switcher -----*****/
-mode-switcher{
-    enabled:                     true;
-    spacing:                     10px;
-    margin:                      0px;
-    padding:                     0px 250px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-}
-button {
-    padding:                     10px;
-    border-radius:               0px;
-    background-color:            @background-alt;
-    text-color:                  inherit;
-    cursor:                      pointer;
-}
-button selected {
-    background-color:            var(urgent);
-    text-color:                  var(background);
 }
 
 /*****----- Message -----*****/
@@ -181,6 +163,7 @@ message {
     background-color:            @background-alt;
     text-color:                  @foreground;
 }
+
 textbox {
     background-color:            transparent;
     text-color:                  @foreground;
@@ -191,6 +174,7 @@ textbox {
     blink:                       true;
     markup:                      true;
 }
+
 error-message {
     padding:                     30px;
     background-color:            @background;

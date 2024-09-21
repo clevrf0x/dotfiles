@@ -34,3 +34,6 @@ nm-applet --indicator &
 
 # Start mpd
 exec mpd &
+
+# Start greenclip daemon
+greenclip daemon&

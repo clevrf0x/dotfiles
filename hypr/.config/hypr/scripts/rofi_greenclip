@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Import Current Theme
+DIR="$HOME/.config/hypr"
+RASI="$DIR/rofi/greenclip.rasi"
+
+rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme ${RASI}
