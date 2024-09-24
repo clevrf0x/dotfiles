@@ -37,3 +37,6 @@ exec mpd &
 
 # Start greenclip daemon
 greenclip daemon&
+
+# Battery health warning
+while true; do ~/.config/hypr/scripts/check_battery; sleep 300; done&
