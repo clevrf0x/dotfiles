@@ -83,7 +83,7 @@ local function setup_completions()
 
     mapping = cmp.mapping.preset.insert {
       ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- Up
-      ["<C-d>"] = cmp.mapping.scroll_docs(4), -- Down
+      ["<C-d>"] = cmp.mapping.scroll_docs(4),  -- Down
       ["<C-j>"] = cmp.mapping.select_next_item(),
       ["<C-k>"] = cmp.mapping.select_prev_item(),
       ["<C-Space>"] = cmp.mapping.complete(),
@@ -93,23 +93,6 @@ local function setup_completions()
       },
     },
   }
-end
-
--- Function to format file before saving
-local function format_files_before_save()
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function(event)
-      -- Only format if it's not a JavaScript/TypeScript file
-      if
-        not vim.tbl_contains(
-          { "javascript", "typescript", "javascriptreact", "typescriptreact" },
-          vim.bo[event.buf].filetype
-        )
-      then
-        vim.lsp.buf.format { async = false }
-      end
-    end,
-  })
 end
 
 -- Main setup section
@@ -142,16 +125,15 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     dependencies = {
-      "hrsh7th/nvim-cmp", -- Autocompletion plugin,
-      "hrsh7th/cmp-nvim-lsp", -- LSP source for nvim-cmp,
+      "hrsh7th/nvim-cmp",         -- Autocompletion plugin,
+      "hrsh7th/cmp-nvim-lsp",     -- LSP source for nvim-cmp,
       "saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
-      "L3MON4D3/LuaSnip", -- Snippets plugin
+      "L3MON4D3/LuaSnip",         -- Snippets plugin
     },
     config = function()
       setup_lsp_servers(lsp_servers)
       setup_keybindings_on_lsp_attach()
       setup_completions()
-      format_files_before_save()
     end,
   },
 }

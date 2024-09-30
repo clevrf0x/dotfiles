@@ -210,7 +210,7 @@ plugins {
 pane_frames true
 auto_layout true
 session_serialization true
-theme "gruvbox-dark"
+theme "tokyo-night-storm"
 default_layout "compact"
 mouse_mode true
 copy_command "wl-copy"
