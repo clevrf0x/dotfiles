@@ -101,3 +101,4 @@ eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/catppuccin.json)"
 ## Auto run scripts
 # Colorscripts
 pfetch
+source /usr/share/nvm/init-nvm.sh
