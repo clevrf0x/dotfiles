@@ -60,6 +60,7 @@ EDITOR=nvim
 export PATH="$HOME/sdk/flutter/bin:$HOME/go/bin:$PATH"
 export PATH="$HOME/Android/Sdk/platform-tools:$PATH"
 export PATH="$HOME/Android/Sdk/cmdline-tools/latest/bin:$PATH"
+export PATH="/home/clevrf0x/.config/composer/vendor/bin:$PATH"
 export CHROME_EXECUTABLE=google-chrome-stable
 
 ## Alias
@@ -101,4 +102,3 @@ eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/catppuccin.json)"
 ## Auto run scripts
 # Colorscripts
 pfetch
-source /usr/share/nvm/init-nvm.sh

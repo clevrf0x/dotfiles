@@ -1,15 +1,62 @@
-## Copyright (C) 2020-2024 Aditya Shakya <adi1090x@gmail.com>
-##
-## Configuration for Alacritty, the GPU enhanced terminal emulator.
-## It's a very basic and simple config file, for full configuration, Run `man 5 alacritty`
+## Colors configuration
+[colors.primary]
+background = "#12121b"
+foreground = "#e1e9ee"
 
-## GENERAL --------------------------------------------------------
+[colors.normal]
+black = "#12121b"
+red = "#9BD2A4"
+green = "#ABE9B3"
+yellow = "#DCB6F1"
+blue = "#8FD5F3"
+magenta = "#ABD9F2"
+cyan = "#CACCFD"
+white = "#e1e9ee"
 
-## Import additional configuration files.
-import = [
-  "~/.config/hypr/alacritty/colors.toml",
-  "~/.config/hypr/alacritty/fonts.toml",
-]
+[colors.bright]
+black = "#9da3a6"
+red = "#9BD2A4"
+green = "#ABE9B3"
+yellow = "#DCB6F1"
+blue = "#8FD5F3"
+magenta = "#ABD9F2"
+cyan = "#CACCFD"
+white = "#e1e9ee"
+
+[font]
+## Font size in points.
+size = 10
+
+## When true, Alacritty will use a custom built-in font for box drawing characters and powerline symbols.
+builtin_box_drawing = true
+
+## Normal font family.
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+## If the family is not specified, it will fall back to the value specified for the normal font.
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+
+## If the family is not specified, it will fall back to the value specified for the normal font.
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+## If the family is not specified, it will fall back to the value specified for the normal font.
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+
+## Offset is the extra space around each character.
+## 'y' can be thought of as modifying the line spacing, and 'x' as modifying the letter spacing.
+[font.offset]
+x = 0
+y = 0
+
+## Glyph offset determines the locations of the glyphs within their cells with the default being at the bottom.
+## Increasing 'x' moves the glyph to the right, increasing 'y' moves the glyph upward.
+[font.glyph_offset]
+x = 0
+y = 0
 
 ## You can set shell.program to the path of your favorite shell, e.g. /bin/zsh.
 ## Entries in shell.args are passed as arguments to the shell.
@@ -20,10 +67,10 @@ import = [
 #working_directory = "None"
 
 ## Live config reload
-live_config_reload = true
+# live_config_reload = true
 
 ## Offer IPC using alacritty msg
-ipc_socket = true
+# ipc_socket = true
 
 ## ENVIRONMENT ----------------------------------------------------
 
