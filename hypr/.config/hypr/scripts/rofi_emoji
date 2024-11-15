@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+DIR="$HOME/.config/hypr"
+RASI="$DIR/rofi/emoji.rasi"
+
+rofimoji --action copy --selector-args="-theme ${RASI}" --hidden-descriptions
