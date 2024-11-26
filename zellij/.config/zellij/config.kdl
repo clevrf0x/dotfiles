@@ -186,8 +186,13 @@ keybinds {
 }
 
 plugins {
-    tab-bar location="zellij:tab-bar"
-    status-bar location="zellij:status-bar"
+    // Replace tab-bar with a custom empty plugin
+    tab-bar location="zellij:tab-bar" {
+        // Force an empty configuration to minimize visibility
+        hide_tab_bar true
+    }
+    // Comment out or remove other unnecessary bars
+    // status-bar location="zellij:status-bar"
     strider location="zellij:strider"
     compact-bar location="zellij:compact-bar"
     session-manager location="zellij:session-manager"
@@ -199,24 +204,15 @@ plugins {
     }
 }
 
-// Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
-// eg. when terminal window with an active zellij session is closed
-// Options:
-//   - detach (Default)
-//   - quit
-//
-// on_force_close "quit"
-
-pane_frames true
+// Rest of the configuration remains the same as the previous config
+pane_frames false
 auto_layout true
 session_serialization true
 theme "tokyo-night-storm"
 default_layout "compact"
-mouse_mode true
+mouse_mode false
 copy_command "wl-copy"
 copy_on_select true
-
-// scrollback_editor "/usr/bin/vim"
 
 ui {
     pane_frames {
