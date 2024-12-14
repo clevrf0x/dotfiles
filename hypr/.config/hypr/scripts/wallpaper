@@ -4,6 +4,6 @@
 ##
 ## Set Wallpaper in Hyprland
 
-WALLPAPER='/home/clevrf0x/Pictures/wallpapers/various-os-2-4k.png'
+WALLPAPER='/home/clevrf0x/Pictures/wallpapers/jinx.jpg'
 
 swaybg --output '*' --mode fill --image "$WALLPAPER"
