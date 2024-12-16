@@ -1,27 +1,26 @@
-## Colors configuration
 [colors.primary]
-background = "#12121b"
-foreground = "#e1e9ee"
+background = "#101621"
+foreground = "#B5C7D2"
 
 [colors.normal]
-black = "#12121b"
-red = "#9BD2A4"
-green = "#ABE9B3"
-yellow = "#DCB6F1"
-blue = "#8FD5F3"
-magenta = "#ABD9F2"
-cyan = "#CACCFD"
-white = "#e1e9ee"
+black = "#101621"
+red = "#A0515C"
+green = "#5F8282"
+yellow = "#6594A6"
+blue = "#6C95BF"
+magenta = "#7D9FB0"
+cyan = "#73B2C1"
+white = "#B5C7D2"   
 
 [colors.bright]
-black = "#9da3a6"
-red = "#9BD2A4"
-green = "#ABE9B3"
-yellow = "#DCB6F1"
-blue = "#8FD5F3"
-magenta = "#ABD9F2"
-cyan = "#CACCFD"
-white = "#e1e9ee"
+black = "#1D2733"   
+red = "#B15F68"     
+green = "#6B9696"   
+yellow = "#73A8BA"  
+blue = "#80B1D5"    
+magenta = "#8EB5C7" 
+cyan = "#85C7D6"    
+white = "#E1EAF2"   
 
 [font]
 ## Font size in points.

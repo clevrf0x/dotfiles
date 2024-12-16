@@ -40,7 +40,7 @@ window#waybar.hidden {
 }
 
 #custom-power {
-	background-color: @red;
+	background-color: @green;
 	font-size: 16px;
 }
 
@@ -60,7 +60,7 @@ window#waybar.hidden {
 	padding: 4px 6px;
 }
 #idle_inhibitor.deactivated {
-	background-color: @red;
+	background-color: @green;
 }
 
 /** ********** Tray ********** **/
@@ -98,10 +98,10 @@ window#waybar.hidden {
 	font-weight: bold;
 }
 #mpd.disconnected {
-	color: @red;
+	color: @green;
 }
 #mpd.stopped {
-	color: @red;
+	color: @green;
 }
 #mpd.playing {
 	color: @cyan;
@@ -144,19 +144,19 @@ window#waybar.hidden {
 }
 
 #custom-spotify.playing {
-    background: linear-gradient(90deg, @magenta 25%, @red 50%, @yellow 75%, @cyan 100%); 
+    background: linear-gradient(90deg, @magenta 25%, @green 50%, @yellow 75%, @cyan 100%); 
     background-size: 300% 300%;
     animation: gradient 10s ease infinite;
     color: @background;
 }
 
 #custom-spotify.offline {
-	color: @red;
+	color: @green;
 }
 
 /** ********** CPU ********** **/
 #cpu {
-	color: @red;
+	color: @green;
 }
 
 /** ********** Memory ********** **/
@@ -177,7 +177,7 @@ window#waybar.hidden {
 	color: @cyan;
 }
 #pulseaudio.muted {
-	color: @red;
+	color: @green;
 }
 
 #pulseaudio.2 {
@@ -210,7 +210,7 @@ window#waybar.hidden {
 }
 #battery.2.critical:not(.charging) {
 	background-color: @background-alt1;
-    color: @red;
+    color: @green;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -223,7 +223,7 @@ window#waybar.hidden {
 	color: @yellow;
 }
 #network.disconnected,#network.disabled {
-	color: @red;
+	color: @green;
 }
 #network.linked {
 }
@@ -237,10 +237,10 @@ window#waybar.hidden {
 	color: @green;
 }
 #bluetooth.disabled{
-	color: @red;
+	color: @green;
 }
 #bluetooth.off{
-	color: @red;
+	color: @green;
 }
 #bluetooth.on{
 }
@@ -270,7 +270,7 @@ window#waybar.hidden {
 	color: @foreground;
 }
 #workspaces button.active{
-	color: @red;
+	color: @green;
 }
 #workspaces button.urgent{
 	color: @green;

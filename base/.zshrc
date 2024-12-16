@@ -82,7 +82,7 @@ alias grep='rg'
 eval "$(fzf --zsh)"
 
 # Load oh my posh prompt
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/catppuccin.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.json)"
 
 # Start Zellij Sessions
 # ZJ_SESSIONS=$(zellij list-sessions --no-formatting | sed 's/\x1B\[[0-9;]*[JKmsu]//g')

@@ -81,6 +81,26 @@ vim.opt.softtabstop = 4
 -- Hide commandline space, as well as hide output automatically
 vim.opt.cmdheight = 0
 
+-- Setup custom Colorscheme
+-- Load custom theme
+-- local theme = require 'kickstart.plugins.custom-theme'
+-- theme.setup()
+
+-- Optional: Transparent UI elements
+-- vim.cmd [[
+--   hi Normal guibg=NONE ctermbg=NONE
+--   hi LineNr guibg=NONE
+--   hi NonText guibg=NONE
+--   hi EndOfBuffer guibg=NONE
+-- ]]
+--
+-- vim.cmd [[
+--   hi Pmenu guibg=NONE
+--   hi NormalFloat guibg=NONE
+--   hi TelescopeNormal guibg=NONE
+--   hi TelescopeBorder guibg=NONE
+-- ]]
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -684,14 +704,17 @@ require('lazy').setup({
       }
     end,
   },
-
-  { -- You can easily change to a different colorscheme.
+  {
+    -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
     'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
+    opts = {
+      transparent = true,
+    },
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
