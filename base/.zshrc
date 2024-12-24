@@ -102,3 +102,5 @@ eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/custom.json)"
 ## Auto run scripts
 # Colorscripts
 pfetch
+
+. "$HOME/.local/bin/env"
