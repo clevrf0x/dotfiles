@@ -493,7 +493,18 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
-        gopls = {},
+        gopls = {
+          settings = {
+            gopls = {
+              usePlaceholders = true, -- Enable placeholders for function parameters or return types
+              completeUnimported = true, -- Autocomplete for unimported packages
+              analyses = {
+                unusedparams = true, -- Report unused parameters
+              },
+              staticcheck = true, -- Enable static analysis
+            },
+          },
+        },
         pyright = {},
         rust_analyzer = {},
         ts_ls = {},
@@ -584,6 +595,7 @@ require('lazy').setup({
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        go = { 'gofmt' },
       },
     },
   },
@@ -698,6 +710,7 @@ require('lazy').setup({
             group_index = 0,
           },
           { name = 'nvim_lsp' },
+          { name = 'buffer' },
           { name = 'luasnip' },
           { name = 'path' },
         },
