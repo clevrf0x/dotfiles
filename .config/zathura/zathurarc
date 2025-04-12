@@ -1,0 +1,15 @@
+# Base colors
+set default-bg              "#282828" # Darker background
+set default-fg              "#d4c4a9" # Warm foreground
+
+# Recolor mode (for documents)
+set recolor true
+set recolor-lightcolor     "#e5d9c3" # Slightly darker cream
+set recolor-darkcolor      "#4a4139" # Lighter brown text
+set recolor-keephue        false
+set recolor-reverse-video  true
+
+# Additional comfort settings
+set font                   "Roboto Mono 11"
+set adjust-open            "best-fit"
+set page-padding          1

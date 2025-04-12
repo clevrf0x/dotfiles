@@ -1,0 +1,25 @@
+##
+## Custom configuration options for ghostty
+##
+
+## Theme
+theme = "/home/clevrf0x/.config/ghostty/themes/dark"
+
+## Fonts
+font-size = 10.5
+font-family = ""
+font-family = "JetBrainsMono Nerd Font"
+font-family-bold = "JetBrainsMono Nerd Font"
+font-family-italic = "JetBrainsMono Nerd Font"
+font-family-bold-italic = "JetBrainsMono Nerd Font"
+
+## Cursor
+shell-integration-features = no-cursor
+cursor-style = "block"
+
+# Window
+window-padding-x = 7
+window-padding-y = 7
+background-opacity = 0.9
+background-blur = true
+
