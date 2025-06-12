@@ -66,6 +66,10 @@ export CHROME_EXECUTABLE=google-chrome-stable
 # Ruby Configs
 export PATH="/home/clevrf0x/.local/share/gem/ruby/3.3.0/bin:$PATH"
 
+# Go Path
+export GOPATH="$HOME/go"
+export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
+
 ## Alias
 alias c='clear'
 alias cf='clear && pfetch'
