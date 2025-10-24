@@ -2,6 +2,18 @@
 
 ### Gallery
 
+![Home](./assets/Home.png)
+
+![Apps](./assets/Apps.png)
+
+![Bat](./assets/bat.png)
+
+![Runner](./assets/Runner.png)
+
+![PowerMenu](./assets/PowerMenu.png)
+
+![Lockscreen](./assets/lockscreen.png)
+
 ### Usage
 
 - Clone the dotfiles
@@ -16,12 +28,12 @@
   sudo pacman -S stow
   ```
 
-- Execute the command below
+- Execute the command below (change username to your own username)
 
   ```bash
   # CAUTION: This will delete all existing dotfiles on target path if it exists
 
-  stow . --target=/home/<username> --adopt
+  stow . --target=/home/clevrf0x --adopt --ignore=assets
   git restore .
   ```
 

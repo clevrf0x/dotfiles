@@ -1,5 +1,5 @@
 ## Theme
-theme = "~/.config/ghostty/themes/tokyonight"
+theme = "tokyonight"
 
 ## Fonts
 font-size = 10.5
