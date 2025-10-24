@@ -1,0 +1,14 @@
+max-history=8
+max-visible=8
+background-color=#1a1b26
+text-color=#c0caf5
+border-color=#7aa2f7
+icons=0
+max-icon-size=64
+default-timeout=5000
+layer=overlay
+# icon-path=/usr/share/icons/Papirus-Dark/
+
+[urgency=high]
+border-color=#f7768e
+default-timeout=0

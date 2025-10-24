@@ -1,0 +1,10 @@
+#!/bin/bash
+
+timestamp=$(date +%Y-%m-%d_%H-%M-%S)
+output_dir=~/Pictures/Screenshots
+output_file="$output_dir/screenshot_$timestamp.png"
+
+mkdir -p "$output_dir"
+
+grim -g "$(slurp)" "$output_file" && wl-copy < "$output_file"
+notify-send "Screenshot Taken" "Saved to $output_file and copied to clipboard"

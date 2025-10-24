@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+shutdown='⏻ Shutdown'
+reboot=' Reboot'
+lock=' Lock'
+suspend='󰤄 Suspend'
+logout='󰍃 Logout'
+hibernate='⏼ Hibernate'
+
+## Confirmation
+confirm_exit() {
+    rofi -dmenu \
+        -i \
+        -no-fixed-num-lines \
+        -p "Are You Sure? : " \
+        -theme ~/.config/rofi/themes/confirm.rasi
+}
+
+chosen="$(echo -e "$lock\n$suspend\n$logout\n$hibernate\n$reboot\n$shutdown" | rofi -dmenu -i -p "Power Menu" -theme ~/.config/rofi/themes/powermenu.rasi)"
+
+case "$chosen" in
+    "$shutdown")
+        ans=$(confirm_exit &)
+        if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
+            systemctl poweroff
+        fi
+        ;;
+    "$reboot")
+        ans=$(confirm_exit &)
+        if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
+            systemctl reboot
+        fi
+        ;;
+    "$lock")
+        loginctl lock-session
+        ;;
+    "$suspend")
+        ans=$(confirm_exit &)
+        if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
+            systemctl suspend
+        fi
+        ;;
+    "$logout")
+        ans=$(confirm_exit &)
+        if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
+            loginctl terminate-user "$(whoami)"
+        fi
+        ;;
+    "$hibernate")
+        ans=$(confirm_exit &)
+        if [[ $ans == "yes" || $ans == "YES" || $ans == "y" || $ans == "Y" ]]; then
+            systemctl hibernate
+        fi
+        ;;
+esac

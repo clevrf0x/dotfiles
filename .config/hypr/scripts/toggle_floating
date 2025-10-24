@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FIXED_WIDTH=1000
+FIXED_HEIGHT=650
+
+floating=$(hyprctl activewindow -j | jq '.floating')
+
+if [ "$floating" == "false" ]; then
+    hyprctl --batch "dispatch togglefloating; dispatch resizeactive exact ${FIXED_WIDTH} ${FIXED_HEIGHT}; dispatch centerwindow"
+else
+    hyprctl dispatch togglefloating
+fi

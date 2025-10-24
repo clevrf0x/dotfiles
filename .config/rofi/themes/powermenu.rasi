@@ -1,0 +1,68 @@
+* {
+    bg-primary: #1a1b26;
+    hv: #9274ca; 
+    blue: #7aa2f7; 
+    font: "JetBrainsMono NF 11";
+    background-color: @bg-primary;
+    border: 0px;
+    fg-primary: #c0caf5;
+    black: #000000;
+}
+
+window {
+    width: 500px;
+    location: center;
+    anchor: center;
+    transparency: "screenshot";
+    border-color: @blue;   
+    border: 2px;
+    border-radius: 6px;
+    spacing: 0;
+    children: [ mainbox ];
+}
+
+mainbox {
+    spacing: 0;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    color: @fg-primary;
+    padding: 11px;
+    border: 0 0 2px 0;
+    border-color: @blue;
+}
+
+prompt {
+    margin: 0px 5px 0px 0px;
+    text-color: @fg-primary;
+}
+
+entry {
+  color: @fg-primary;
+}
+
+listview {
+    layout: vertical;
+    padding: 8px;
+    lines: 6;
+    columns: 1;
+    dynamic: false;
+}
+
+element {
+    padding: 10px;
+    color: @fg-primary;
+    font: inherit;
+    border-radius: 4px;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
+element selected.normal {
+    color: @black;
+    background-color: @hv;
+}

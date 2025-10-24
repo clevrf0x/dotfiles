@@ -1,0 +1,369 @@
+/* TokyoNight Night Color Scheme */
+@define-color bg-primary #1a1b26;
+@define-color bg-secondary #24283b;
+@define-color bg-tertiary #414868;
+@define-color fg-primary #c0caf5;
+@define-color fg-secondary #a9b1d6;
+@define-color fg-tertiary #9aa5ce;
+
+@define-color blue #7aa2f7;
+@define-color cyan #7dcfff;
+@define-color green #9ece6a;
+@define-color yellow #e0af68;
+@define-color orange #ff9e64;
+@define-color red #f7768e;
+@define-color magenta #bb9af7;
+@define-color purple #9d7cd8;
+@define-color teal #1abc9c;
+
+@define-color critical #f7768e;
+@define-color warning #e0af68;
+@define-color success #9ece6a;
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMono NF, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: @bg-primary;
+    border-bottom: 1px solid @bg-secondary;
+    color: @fg-primary;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+    background-color: @bg-secondary;
+}
+
+window#waybar.chromium {
+    background-color: @bg-primary;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px @blue;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    /* background-color: @orange; */
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @fg-primary;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+    background-color: @bg-secondary;
+    box-shadow: inset 0 -3px @blue;
+}
+
+#workspaces button.urgent {
+    background-color: @critical;
+    color: @bg-primary;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd {
+    padding: 0 10px;
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#custom-power {
+    background-color: @critical;
+    color: @bg-primary;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#battery {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#battery.charging, #battery.plugged {
+    background-color: @bg-secondary;
+    color: @teal;
+}
+
+@keyframes blink {
+    to {
+        background-color: @bg-secondary;
+        color: @fg-primary;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: @bg-secondary;
+    color: @critical;
+    /* animation-name: blink; */
+    /* animation-duration: 0.5s; */
+    /* animation-timing-function: steps(12); */
+    /* animation-iteration-count: infinite; */
+    /* animation-direction: alternate; */
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    padding-right: 12px;
+    background-color: @bg-secondary;
+    color: @critical;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: @bg-secondary;
+    color: @blue;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: @bg-secondary;
+    color: @teal;
+}
+
+label:focus {
+    background-color: @bg-primary;
+}
+
+#cpu {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#memory {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#disk {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#backlight {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#network {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#network.disconnected {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#pulseaudio {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#pulseaudio.muted {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#wireplumber {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#wireplumber.muted {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#custom-media {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#custom-media.custom-vlc {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#temperature {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#temperature.critical {
+    background-color: @critical;
+    color: @orange;
+}
+
+#tray {
+    background-color: @bg-secondary;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @critical;
+}
+
+#idle_inhibitor {
+    background-color: @bg-secondary;
+}
+
+#idle_inhibitor.activated {
+    background-color: @bg-secondary;
+    color: @blue;
+}
+
+#mpd {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#mpd.disconnected {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#mpd.stopped {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#mpd.paused {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#language {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: @fg-primary;
+}
+
+#privacy-item.screenshare {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#privacy-item.audio-in {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
+
+#privacy-item.audio-out {
+    background-color: @bg-secondary;
+    color: @fg-primary;
+}
