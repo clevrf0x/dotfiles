@@ -62,6 +62,9 @@ EDITOR=nvim
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
+# Pipx Path 
+export PATH="$PATH:/home/clevrf0x/.local/bin"
+
 ## Alias
 alias c='clear'
 alias cf='clear && pfetch'

@@ -57,10 +57,10 @@ element {
     border-radius: 4px;
 }
 
-element-text {
-    background-color: inherit;
-    text-color: inherit;
-}
+ element-text {
+     background-color: inherit;
+     text-color: inherit;
+ }
 
 element selected.normal {
     color: @black;
